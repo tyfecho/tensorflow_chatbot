@@ -10,7 +10,7 @@ I am fortunate enough to be given time to learn and navigate my way around this 
 **References**
 1) What the original plan was : https://github.com/lukalabs/cakechat
 
-2) Like an idiot, I dove right into that without any drowned.
+2) Like an idiot, I dove right into that and drowned.
 
 3) After realising it went nowhere, I started right at the beginning, with tensorflow's own documentation : https://www.tensorflow.org/tutorials
 
@@ -31,8 +31,8 @@ I am fortunate enough to be given time to learn and navigate my way around this 
 For the tutorial shown in 5): 
 - pickle.dump(model, open("katana-assistant-model.pkl", "wb")) // this was shown but produced a thread lock issue.
 - I just saved it using model.save() and avoided pickle.dump to save a model.
-- Funnily enough : pickle.dump(model.history, open("katana-assistant-model.pkl", "wb")) would work.
-- Read this : https://www.tensorflow.org/api_docs/python/tf/keras/callbacks
+- Funnily enough : pickle.dump(model.history, open("katana-assistant-model.pkl", "wb")) would work. ( https://stackoverflow.com/questions/59326551/cannot-pickle-tensorflow-object-in-python-typeerror-cant-pickle-thread-loc )
+- Related to this : https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/History ( model.fit() RETURNS a history object, so take note of that )
 
 **To be continued**
 
