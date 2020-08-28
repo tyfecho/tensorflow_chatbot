@@ -38,5 +38,19 @@ For the tutorial shown in 5):
 - Run it via : python3 flask_api_tensorflow.py
 - While the server is up :
     - Access the url : http://0.0.0.0:5000/predict?a=i_need_help&b=none
-    - This would product the probability and determine the intent.
+    - This would produce the probability and determine the intent, for the command ( I need help )
     - The python script 'GETs' the a and b values in the URL ( which is 'I need help' ) and checks it with the model and produces the probability alongside it.
+    - The intents.json shows a couple of commands and data I fed into it, which is then used in the "tensorflow_assistant_py3.ipynb" to build the model.
+- Try another URL : http://0.0.0.0:5000/predict?a=hello&b=none
+    - This is under the intent : greeting, which can be referred to in the Intents.json.
+
+**Building and defining your own model** 
+- Change the intents however you will. ( Remove, Upgrade etc ).
+- Happy? Run the "tensorflow_assistant_py3.ipynb", this will build the model. ( both .pkl and .h5 )
+- Then, run "python3 flask_api_tensorflow.py" in your terminal, to test your change. ( Provided youve installed the necessary files )
+
+**Whats next?**
+- Look into Flask examples and build a simple form or HTML to display your change.
+- Maybe use gradio as well.
+- I'll include it into this project when I clean up the build on my end... It's a mess.
+
