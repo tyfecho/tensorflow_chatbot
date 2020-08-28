@@ -34,5 +34,9 @@ For the tutorial shown in 5):
 - Funnily enough : pickle.dump(model.history, open("katana-assistant-model.pkl", "wb")) would work. ( https://stackoverflow.com/questions/59326551/cannot-pickle-tensorflow-object-in-python-typeerror-cant-pickle-thread-loc )
 - Related to this : https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/History ( model.fit() RETURNS a history object, so take note of that )
 
-**To be continued**
-
+**Running**
+- Run it via : python3 flask_api_tensorflow.py
+- While the server is up :
+    - Access the url : http://0.0.0.0:5000/predict?a=i_need_help&b=none
+    - This would product the probability and determine the intent.
+    - The python script 'GETs' the a and b values in the URL ( which is 'I need help' ) and checks it with the model and produces the probability alongside it.

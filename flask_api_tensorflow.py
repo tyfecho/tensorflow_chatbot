@@ -12,7 +12,7 @@ import flask
 import pickle
 
 
-data = pickle.load (open("bin/tensorflow/tensorflow-assistant-data.pkl", "rb"))
+data = pickle.load (open("tensorflow-assistant-data.pkl", "rb"))
 words = data['words']
 classes = data['classes']
 
@@ -22,7 +22,7 @@ sess = tf.Session()
 graph = tf.get_default_graph()
 
 tf.keras.backend.set_session(sess)
-model = load_model('bin/tensorflow/tensorflow-assistant-model.h5')
+model = load_model('tensorflow-assistant-model.h5')
 
 
 
